@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Book IT! Design System - Black & White Version */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 0 0% 96%;
+
+    --secondary: 0 0% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 0 0% 92%;
+
+    --quick-pickup: 0 0% 25%;
+    --quick-pickup-foreground: 0 0% 100%;
+    --quick-pickup-light: 0 0% 92%;
+
+    --time-slot: 0 0% 20%;
+    --time-slot-foreground: 0 0% 100%;
+    --time-slot-light: 0 0% 92%;
+
+    --success: 0 0% 25%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 0 0% 92%;
+
+    --warning: 0 0% 40%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 0 0% 92%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 0% 20%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 20%;
+
+    /* B&W Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 10%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 40%) 0%, hsl(0 0% 20%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 96%) 100%);
+    --gradient-quick: linear-gradient(135deg, hsl(0 0% 15%) 0%, hsl(0 0% 0%) 100%);
+    --gradient-timeslot: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 96%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
+    --shadow-primary: 0 10px 30px -10px hsl(0 0% 0% / 0.2);
+    --shadow-secondary: 0 10px 30px -10px hsl(0 0% 20% / 0.2);
+    --shadow-quick: 0 8px 25px -8px hsl(0 0% 30% / 0.2);
+    --shadow-timeslot: 0 8px 25px -8px hsl(0 0% 40% / 0.2);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 0 0% 20%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 10%;
+    --primary-light: 0 0% 20%;
+
+    --secondary: 0 0% 80%;
+    --secondary-foreground: 0 0% 10%;
+    --secondary-light: 0 0% 20%;
+
+    --quick-pickup: 0 0% 85%;
+    --quick-pickup-foreground: 0 0% 10%;
+    --quick-pickup-light: 0 0% 20%;
+
+    --time-slot: 0 0% 75%;
+    --time-slot-foreground: 0 0% 10%;
+    --time-slot-light: 0 0% 20%;
+
+    --success: 0 0% 85%;
+    --success-foreground: 0 0% 10%;
+    --success-light: 0 0% 20%;
+
+    --warning: 0 0% 90%;
+    --warning-foreground: 0 0% 10%;
+    --warning-light: 0 0% 20%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 0% 60%;
+    --destructive-foreground: 0 0% 10%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 80%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 90%) 0%, hsl(0 0% 70%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 50%) 0%, hsl(0 0% 30%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 15%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 12%) 100%);
+    --gradient-quick: linear-gradient(135deg, hsl(0 0% 30%) 0%, hsl(0 0% 0%) 100%);
+    --gradient-timeslot: linear-gradient(135deg, hsl(0 0% 80%) 0%, hsl(0 0% 60%) 100%);
+
+    --shadow-primary: 0 10px 30px -10px hsl(0 0% 100% / 0.15);
+    --shadow-secondary: 0 10px 30px -10px hsl(0 0% 80% / 0.15);
+    --shadow-quick: 0 8px 25px -8px hsl(0 0% 60% / 0.15);
+    --shadow-timeslot: 0 8px 25px -8px hsl(0 0% 50% / 0.15);
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  .gradient-quick {
+    background: var(--gradient-quick);
+  }
+  .gradient-timeslot {
+    background: var(--gradient-timeslot);
+  }
+
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  .shadow-secondary {
+    box-shadow: var(--shadow-secondary);
+  }
+  .shadow-quick {
+    box-shadow: var(--shadow-quick);
+  }
+  .shadow-timeslot {
+    box-shadow: var(--shadow-timeslot);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  .animate-scale {
+    animation: scale 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scale {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+  }
+}
