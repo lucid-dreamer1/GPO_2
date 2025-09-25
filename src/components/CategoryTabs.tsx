@@ -16,7 +16,7 @@ export const CategoryTabs = ({ activeTab, onTabChange }: CategoryTabsProps) => {
           onClick={() => onTabChange("quick-pickup")}
           className={`flex-1 h-12 text-sm font-medium ${
             activeTab === "quick-pickup"
-              ? "bg-black text-white hover:bg-black"
+              ? "bg-[#045B5A] text-white hover:bg-[#045B5A]"
               : "bg-white text-black border hover:bg-muted/40"
           }`}
         >
@@ -33,7 +33,7 @@ export const CategoryTabs = ({ activeTab, onTabChange }: CategoryTabsProps) => {
           onClick={() => onTabChange("time-slot")}
           className={`flex-1 h-12 text-sm font-medium ${
             activeTab === "time-slot"
-              ? "bg-black text-white hover:bg-black"
+              ? "bg-[#045B5A] text-white hover:bg-[#045B5A]"
               : "bg-white text-black border hover:bg-muted/40"
           }`}
         >

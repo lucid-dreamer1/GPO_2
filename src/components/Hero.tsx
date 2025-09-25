@@ -1,22 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, MapPin } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
 
   const handleQuickPickup = () => {
-    navigate("/quick-pickup"); // pagina dedicata Quick Pickup
+    window.location.href = "/quick-pickup"; // pagina dedicata Quick Pickup
   };
 
   const handleTimeReservation = () => {
-    navigate("/time-reservation"); // pagina dedicata Time Reservation
+    window.location.href = "/time-reservation"; // pagina dedicata Time Reservation
   };
 
   return (
-    <section className="relative px-4 py-8 gradient-hero overflow-hidden bg-[#8E44AD]">
+    <section className="relative px-4 py-8 gradient-hero overflow-hidden ">
       <div className="max-w-2xl mx-auto relative z-10">
         <div className="text-center animate-fade-in">
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 leading-tight">
@@ -40,10 +38,10 @@ export const Hero = () => {
             <Button
               variant="time-slot"
               size="lg"
-              className="group h-14 text-base"
-              style={{ color: "black" }}
+              className="group h-14 text-base white"
               onClick={handleTimeReservation}
               disabled={loading}
+              
             >
               ⏰ Time Reservation
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

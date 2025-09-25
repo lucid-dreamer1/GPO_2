@@ -1,7 +1,7 @@
 import { MobileHeader } from "@/components/MobileHeader";
 import { Hero } from "@/components/Hero";
 import { BusinessList } from "@/components/BusinessList";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
@@ -12,8 +12,9 @@ const Index = () => {
           <Hero />
         </div>
         <BusinessList />
+        <Navbar />
       </main>
-      <Footer />
+      
     </div>
   );
 };
