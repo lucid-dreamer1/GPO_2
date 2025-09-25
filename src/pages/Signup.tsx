@@ -54,7 +54,7 @@ const User = () => {
     <div className="min-h-screen bg-background flex flex-col gradient-timeslot">
       <LoginHeader />
       <main className="flex-grow flex items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
+        <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md ">
           {/* Header */}
           <div className="text-center mb-6">
             <h1 className="text-2xl font-bold text-gray-900">

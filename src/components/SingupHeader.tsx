@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, User } from "lucide-react";
-
+import  Navbar  from "./Navbar";
 export const SignupHeader = () => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-blue-600/90 via-blue-500/90 to-green-500/90 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full verde">
       <div className="flex items-center justify-between px-4 h-16">
         
         {/* Logo + testo */}
@@ -30,6 +30,7 @@ export const SignupHeader = () => {
             Signup
           </Button>
         </Link>
+        <Navbar/>
       </div>
     </header>
   );

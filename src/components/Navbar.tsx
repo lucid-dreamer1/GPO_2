@@ -8,7 +8,7 @@ const Navbar = () => {
   const [activeTab, setActiveTab] = useState(location.pathname);
 
   const tabs = [
-    { name: "Home", icon: Home, path: "/home" },
+    { name: "Home", icon: Home, path: "/" },
     { name: "Booked", icon: Calendar, path: "/booked" },
     { name: "Preferiti", icon: Heart, path: "/preferiti" },
     { name: "Impostazioni", icon: Settings, path: "/impostazioni" },
@@ -25,7 +25,7 @@ const Navbar = () => {
             to={tab.path}
             onClick={() => setActiveTab(tab.path)}
             className={`flex flex-col items-center text-sm ${
-              isActive ? "text-blue-500" : "text-gray-500"
+              isActive ? "text-[#045B5A]" : "text-gray-500"
             }`}
           >
             <Icon className="w-6 h-6 mb-1" />
