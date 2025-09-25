@@ -1,16 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, MapPin } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleQuickPickup = () => {
-    window.location.href = "/quick-pickup"; // pagina dedicata Quick Pickup
+    navigate("/quick-pickup"); // pagina dedicata Quick Pickup
   };
 
   const handleTimeReservation = () => {
-    window.location.href = "/time-reservation"; // pagina dedicata Time Reservation
+    navigate("/time-reservation"); // pagina dedicata Time Reservation
   };
 
   return (

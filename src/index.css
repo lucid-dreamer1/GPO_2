@@ -15,13 +15,15 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 0 0% 96%;
+    /* Primary: beige/white */
+    --primary: 40 60% 92%;
+    --primary-foreground: 0 0% 10%;
+    --primary-light: 40 60% 97%;
 
-    --secondary: 0 0% 30%;
+    /* Secondary: orange */
+    --secondary: 24 95% 58%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 0 0% 92%;
+    --secondary-light: 24 95% 90%;
 
     --quick-pickup: 0 0% 25%;
     --quick-pickup-foreground: 0 0% 100%;
@@ -53,8 +55,8 @@
     --ring: 0 0% 20%;
 
     /* B&W Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 10%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 40%) 0%, hsl(0 0% 20%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(40 60% 96%) 0%, hsl(40 60% 92%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(24 95% 65%) 0%, hsl(24 95% 58%) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 95%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 96%) 100%);
     --gradient-quick: linear-gradient(135deg, hsl(0 0% 15%) 0%, hsl(0 0% 0%) 100%);
@@ -65,8 +67,8 @@
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
     --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
     --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
-    --shadow-primary: 0 10px 30px -10px hsl(0 0% 0% / 0.2);
-    --shadow-secondary: 0 10px 30px -10px hsl(0 0% 20% / 0.2);
+    --shadow-primary: 0 10px 30px -10px hsl(40 30% 40% / 0.15);
+    --shadow-secondary: 0 10px 30px -10px hsl(24 80% 45% / 0.25);
     --shadow-quick: 0 8px 25px -8px hsl(0 0% 30% / 0.2);
     --shadow-timeslot: 0 8px 25px -8px hsl(0 0% 40% / 0.2);
 
@@ -92,13 +94,15 @@
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 0 0% 95%;
+    /* Primary: beige/white in dark */
+    --primary: 40 60% 88%;
     --primary-foreground: 0 0% 10%;
-    --primary-light: 0 0% 20%;
+    --primary-light: 40 30% 20%;
 
-    --secondary: 0 0% 80%;
-    --secondary-foreground: 0 0% 10%;
-    --secondary-light: 0 0% 20%;
+    /* Secondary: orange in dark */
+    --secondary: 24 95% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 24 90% 25%;
 
     --quick-pickup: 0 0% 85%;
     --quick-pickup-foreground: 0 0% 10%;
@@ -130,15 +134,15 @@
     --ring: 0 0% 80%;
 
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 90%) 0%, hsl(0 0% 70%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 50%) 0%, hsl(0 0% 30%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(40 60% 30%) 0%, hsl(40 30% 20%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(24 90% 40%) 0%, hsl(24 95% 60%) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 15%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 12%) 100%);
     --gradient-quick: linear-gradient(135deg, hsl(0 0% 30%) 0%, hsl(0 0% 0%) 100%);
     --gradient-timeslot: linear-gradient(135deg, hsl(0 0% 80%) 0%, hsl(0 0% 60%) 100%);
 
-    --shadow-primary: 0 10px 30px -10px hsl(0 0% 100% / 0.15);
-    --shadow-secondary: 0 10px 30px -10px hsl(0 0% 80% / 0.15);
+    --shadow-primary: 0 10px 30px -10px hsl(40 30% 80% / 0.15);
+    --shadow-secondary: 0 10px 30px -10px hsl(24 90% 70% / 0.2);
     --shadow-quick: 0 8px 25px -8px hsl(0 0% 60% / 0.15);
     --shadow-timeslot: 0 8px 25px -8px hsl(0 0% 50% / 0.15);
 
