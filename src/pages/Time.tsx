@@ -1,7 +1,7 @@
 import { MobileHeader } from "@/components/MobileHeader";
 import { Footer } from "@/components/Footer";
 
-const Time_Reservation = () => {
+const Time = () => {
   return (
     <div>
       <MobileHeader />
@@ -14,4 +14,4 @@ const Time_Reservation = () => {
   );
 };
 
-export default Time_Reservation;
+export default Time;

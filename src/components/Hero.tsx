@@ -6,11 +6,11 @@ export const Hero = () => {
   const [loading, setLoading] = useState(false);
 
   const handleQuickPickup = () => {
-    window.location.href = "/quick-pickup"; // pagina dedicata Quick Pickup
+    window.location.href = "/Quick"; // pagina dedicata Quick Pickup
   };
 
   const handleTimeReservation = () => {
-    window.location.href = "/time-reservation"; // pagina dedicata Time Reservation
+    window.location.href = "/Time"; // pagina dedicata Time Reservation
   };
 
   return (

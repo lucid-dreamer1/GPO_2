@@ -1,7 +1,7 @@
 import { MobileHeader } from "@/components/MobileHeader";
 import { Footer } from "@/components/Footer";
 
-const Quick_Pickup = () => {
+const Quick = () => {
   return (
     <div>
       <MobileHeader />
@@ -14,4 +14,4 @@ const Quick_Pickup = () => {
   );
 };
 
-export default Quick_Pickup;
+export default Quick;
