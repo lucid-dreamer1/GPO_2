@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { LoginHeader } from "@/components/LoginHeader";
-import { Footer } from "@/components/Footer";
 import { SignupHeader } from "@/components/SingupHeader";
+import { db } from "@/firebaseConfig";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -18,10 +18,11 @@ const LoginPage = () => {
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const { email, password } = formData;
 
+    // Validazioni
     if (!validateEmail(email)) {
       alert("Email non valida.");
       return;
@@ -31,21 +32,28 @@ const LoginPage = () => {
       return;
     }
 
-    // Qui puoi aggiungere la chiamata al backend per il login
-    // esempio fetch("/api/login", { method: "POST", body: JSON.stringify({ email, password }) })
+    try {
+      const q = query(collection(db, "utenti"), where("email", "==", email));
+      const querySnapshot = await getDocs(q);
 
-    // Per ora simuliamo il login controllando localStorage
-    const storedUser = localStorage.getItem("utenteRegistrato");
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      if (user.email === email) {
+      if (querySnapshot.empty) {
+        alert("Nessun utente registrato con questa email.");
+        return;
+      }
+
+      const userDoc = querySnapshot.docs[0];
+      const user = userDoc.data();
+
+      // Controllo password (solo test, in produzione usare Firebase Auth!)
+      if (user.password === password) {
         alert(`Benvenuto, ${user.nome}!`);
-        window.location.href = "/shop"; // redirect allo shop
+        window.location.href = "/"; // redirect
       } else {
         alert("Credenziali non corrette.");
       }
-    } else {
-      alert("Nessun utente registrato con questa email.");
+    } catch (error: any) {
+      console.error(error);
+      alert("Errore nel login: " + error.message);
     }
   };
 
@@ -54,7 +62,6 @@ const LoginPage = () => {
       <SignupHeader />
       <main className="flex-grow flex items-center justify-center p-4">
         <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
-          {/* Header */}
           <div className="text-center mb-6">
             <h1 className="text-2xl font-bold text-gray-900">Accedi</h1>
             <p className="text-gray-500 mt-2">
@@ -62,8 +69,8 @@ const LoginPage = () => {
             </p>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Email */}
             <div>
               <label className="block text-gray-700 font-medium mb-1">
                 Email:
@@ -78,6 +85,7 @@ const LoginPage = () => {
               />
             </div>
 
+            {/* Password */}
             <div>
               <label className="block text-gray-700 font-medium mb-1">
                 Password:
@@ -100,7 +108,6 @@ const LoginPage = () => {
             </button>
           </form>
 
-          {/* Footer mini */}
           <div className="text-center text-gray-400 text-sm mt-6">
             © 2025 Book IT! All rights reserved.
           </div>

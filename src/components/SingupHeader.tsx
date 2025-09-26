@@ -27,7 +27,7 @@ export const SignupHeader = () => {
             className="text-white hover:bg-white/10 rounded-full px-3"
           >
             <User className="h-5 w-5 mr-1" />
-            Signup
+            Registrati
           </Button>
         </Link>
         <Navbar/>

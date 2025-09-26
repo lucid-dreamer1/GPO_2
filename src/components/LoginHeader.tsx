@@ -27,7 +27,7 @@ export const LoginHeader = () => {
             className="text-white hover:bg-white/10 rounded-full px-3"
           >
             <User className="h-5 w-5 mr-1" />
-            Signup
+            Accedi
           </Button>
         </Link>
         <Navbar/>

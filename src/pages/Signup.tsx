@@ -2,13 +2,18 @@
 import React, { useState } from "react";
 import { LoginHeader } from "@/components/LoginHeader";
 import { Footer } from "@/components/Footer";
+import { db } from "@/firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const User = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nome: "",
     cognome: "",
     eta: "",
     email: "",
+    password: "",
     genere: "",
     paese: "",
   });
@@ -21,10 +26,11 @@ const User = () => {
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { nome, cognome, eta, email, genere, paese } = formData;
+    const { nome, cognome, eta, email, password, genere, paese } = formData;
 
+    // Validazioni
     if (nome.trim() === "" || cognome.trim() === "") {
       alert("Nome e Cognome sono obbligatori.");
       return;
@@ -37,6 +43,10 @@ const User = () => {
       alert("Email non valida.");
       return;
     }
+    if (password.length < 6) {
+      alert("La password deve contenere almeno 6 caratteri.");
+      return;
+    }
     if (!genere) {
       alert("Seleziona un genere.");
       return;
@@ -46,8 +56,24 @@ const User = () => {
       return;
     }
 
-    localStorage.setItem("utenteRegistrato", JSON.stringify({ nome, cognome, email }));
-    window.location.href = "shop.html"; // se vuoi, si può cambiare in /shop
+    try {
+      await addDoc(collection(db, "utenti"), {
+        nome,
+        cognome,
+        eta: parseInt(eta),
+        email,
+        password, // 🔥 In produzione, criptala prima!
+        genere,
+        paese,
+        createdAt: new Date()
+      });
+
+      alert("Registrazione avvenuta con successo!");
+      navigate("/");
+    } catch (error) {
+      console.error("Errore nel salvataggio:", error);
+      alert("Errore durante la registrazione. Riprova.");
+    }
   };
 
   return (
@@ -55,7 +81,6 @@ const User = () => {
       <LoginHeader />
       <main className="flex-grow flex items-center justify-center p-4">
         <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md ">
-          {/* Header */}
           <div className="text-center mb-6">
             <h1 className="text-2xl font-bold text-gray-900">
               Registrati ora
@@ -65,8 +90,8 @@ const User = () => {
             </p>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Nome, Cognome, Età, Email */}
             <div>
               <label className="block text-gray-700 font-medium mb-1">
                 Nome:
@@ -80,7 +105,6 @@ const User = () => {
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
             <div>
               <label className="block text-gray-700 font-medium mb-1">
                 Cognome:
@@ -94,7 +118,6 @@ const User = () => {
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
             <div>
               <label className="block text-gray-700 font-medium mb-1">
                 Età:
@@ -108,7 +131,6 @@ const User = () => {
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
             <div>
               <label className="block text-gray-700 font-medium mb-1">
                 Email:
@@ -123,6 +145,22 @@ const User = () => {
               />
             </div>
 
+            {/* Nuovo campo Password */}
+            <div>
+              <label className="block text-gray-700 font-medium mb-1">
+                Password:
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Inserisci la tua password"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            {/* Genere */}
             <div>
               <label className="block text-gray-700 font-medium mb-2">
                 Genere:
@@ -144,6 +182,7 @@ const User = () => {
               </div>
             </div>
 
+            {/* Paese */}
             <div>
               <label className="block text-gray-700 font-medium mb-1">
                 Paese di residenza:
@@ -170,13 +209,11 @@ const User = () => {
             </button>
           </form>
 
-          {/* Footer mini */}
           <div className="text-center text-gray-400 text-sm mt-6">
             © 2025 Book IT! All rights reserved.
           </div>
         </div>
       </main>
-      
     </div>
   );
 };
