@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Search, User, Bell } from "lucide-react";
+import SplashLogo from "@/components/SplashLogo";
 
 export const MobileHeader = () => {
   return (
@@ -16,10 +17,9 @@ export const MobileHeader = () => {
             <p className="text-xs text-muted-foreground -mt-1">Quick & Easy</p>
           </div>
         </div>
-
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="icon" className="h-9 w-9">
-            <Search className="h-4 w-4" />
+
           </Button>
           <Button variant="ghost" size="icon" className="h-9 w-9 relative">
             <Bell className="h-4 w-4" />

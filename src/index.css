@@ -51,25 +51,44 @@
     --border: 0 0% 85%;
     --input: 0 0% 90%;
     --ring: 0 0% 20%;
-    
+
     /* B&W Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 10%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 40%) 0%, hsl(0 0% 20%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 95%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 96%) 100%);
-    --gradient-quick: linear-gradient(135deg,#046d6dc7  , #045B5A 100%);
-    --gradient-timeslot: linear-gradient(145deg, #046d6dc7 0%, #045B5A  100%);
-    --verde: #045B5A;
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(0 0% 20%) 0%,
+      hsl(0 0% 10%) 100%
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(0 0% 40%) 0%,
+      hsl(0 0% 20%) 100%
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(0 0% 100%) 0%,
+      hsl(0 0% 95%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(0 0% 96%) 100%
+    );
+    --gradient-quick: linear-gradient(135deg, #046d6dc7, #045b5a 100%);
+    --gradient-timeslot: linear-gradient(145deg, #046d6dc7 0%, #045b5a 100%);
+    --verde: #045b5a;
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1),
+      0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1),
+      0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1),
+      0 10px 10px -5px hsl(0 0% 0% / 0.04);
     --shadow-primary: 0 10px 30px -10px hsl(0 0% 0% / 0.2);
     --shadow-secondary: 0 10px 30px -10px hsl(0 0% 20% / 0.2);
     --shadow-quick: 0 8px 25px -8px hsl(0 0% 30% / 0.2);
     --shadow-timeslot: 0 8px 25px -8px hsl(0 0% 40% / 0.2);
-    
+
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
@@ -81,19 +100,22 @@
     --sidebar-border: 0 0% 85%;
     --sidebar-ring: 0 0% 20%;
     --white: 0 0% 100%;
-
-
-
-
-
-
-
-
-
+  }
+  .logo-svg path {
+    stroke: white; /* Colore linea */
+    fill: none; /* Nessun riempimento, solo contorno */
+    stroke-width: 4; /* Spessore */
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s ease forwards;
   }
 
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
   .dark {
-
     --background: 0 0% 8%;
     --foreground: 0 0% 95%;
 
@@ -141,12 +163,36 @@
     --ring: 0 0% 80%;
 
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 90%) 0%, hsl(0 0% 70%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 50%) 0%, hsl(0 0% 30%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 15%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 12%) 100%);
-    --gradient-quick: linear-gradient(135deg, hsl(0 0% 30%) 0%, hsl(0 0% 0%) 100%);
-    --gradient-timeslot: linear-gradient(135deg, hsl(0 0% 80%) 0%, hsl(0 0% 60%) 100%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(0 0% 90%) 0%,
+      hsl(0 0% 70%) 100%
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(0 0% 50%) 0%,
+      hsl(0 0% 30%) 100%
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(0 0% 12%) 0%,
+      hsl(0 0% 15%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 10%) 0%,
+      hsl(0 0% 12%) 100%
+    );
+    --gradient-quick: linear-gradient(
+      135deg,
+      hsl(0 0% 30%) 0%,
+      hsl(0 0% 0%) 100%
+    );
+    --gradient-timeslot: linear-gradient(
+      135deg,
+      hsl(0 0% 80%) 0%,
+      hsl(0 0% 60%) 100%
+    );
 
     --shadow-primary: 0 10px 30px -10px hsl(0 0% 100% / 0.15);
     --shadow-secondary: 0 10px 30px -10px hsl(0 0% 80% / 0.15);
@@ -235,17 +281,31 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes scale {
-    from { transform: scale(0.95); }
-    to { transform: scale(1); }
+    from {
+      transform: scale(0.95);
+    }
+    to {
+      transform: scale(1);
+    }
   }
 }
