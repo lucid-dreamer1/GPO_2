@@ -2,7 +2,6 @@ import { MobileHeader } from "@/components/MobileHeader";
 import { Hero } from "@/components/Hero";
 import { BusinessList } from "@/components/BusinessList";
 import Navbar from "@/components/Navbar";
-import SplashLogo from "@/components/SplashLogo";
 
 const Index = () => {
   return (

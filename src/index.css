@@ -101,20 +101,7 @@
     --sidebar-ring: 0 0% 20%;
     --white: 0 0% 100%;
   }
-  .logo-svg path {
-    stroke: white; /* Colore linea */
-    fill: none; /* Nessun riempimento, solo contorno */
-    stroke-width: 4; /* Spessore */
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: draw 2s ease forwards;
-  }
 
-  @keyframes draw {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
   .dark {
     --background: 0 0% 8%;
     --foreground: 0 0% 95%;
